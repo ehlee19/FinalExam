@@ -35,6 +35,7 @@ public class RetirementController implements Initializable {
 		System.out.println("Clear pressed");
 		
 		//	TODO: Clear all the text inputs
+		
 	}
 	
 	@FXML
