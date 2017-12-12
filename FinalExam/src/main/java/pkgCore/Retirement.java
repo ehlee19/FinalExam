@@ -11,16 +11,14 @@ public class Retirement {
 	private double dRequiredIncome;
 	private double dMonthlySSI;
 	
-	//TODO: Build the contructor, getters and setters for the attributes above.
+	
 	
 	public double AmountToSave()
 	{
-		//TODO: Determine the amount to save each month based on TotalAmountSaved, YearsToWork
-		//		and Annual return while working
-		
-		
-		double pmt = (FinanceLib.pmt(dAnnualReturnWorking, (iYearsToWork * 12), 0, TotalAmountSaved(), false));
+		double pv = (FinanceLib.pv(dAnnualReturnRetired, (iYearsRetired * 12), dRequiredIncome - dMonthlySSI, 0, false));
+		double pmt = (FinanceLib.pmt(dAnnualReturnWorking, (iYearsToWork * 12), 0, pv, false));
 		return pmt;
+		
 	}
 	
 	public Retirement(int iYearsToWork, double dAnnualReturnWorking, int iYearsRetired, double dAnnualReturnRetired,

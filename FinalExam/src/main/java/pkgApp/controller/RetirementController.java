@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import pkgApp.RetirementApp;
+import pkgCore.Retirement;
 
 public class RetirementController implements Initializable {
 
@@ -16,6 +17,17 @@ public class RetirementController implements Initializable {
 	
 	@FXML
 	private TextField txtYearsToWork;
+	@FXML
+	private TextField txtSaveEachMonth;
+	@FXML
+	private TextField txtAnnualReturn;
+	@FXML
+	private TextField txtYearsRetired;
+	@FXML
+	private TextField txtRequiredIncome;
+	@FXML
+	private TextField txtMonthlySSI;
+	
 	
 
 	public RetirementApp getMainApp() {
@@ -34,15 +46,23 @@ public class RetirementController implements Initializable {
 	public void btnClear(ActionEvent event) {
 		System.out.println("Clear pressed");
 		
-		//	TODO: Clear all the text inputs
+		txtYearsToWork.clear();
+		txtSaveEachMonth.clear();
+		txtAnnualReturn.clear();
+		txtYearsRetired.clear();
+		txtRequiredIncome.clear();
+		txtMonthlySSI.clear();
+		
 		
 	}
 	
 	@FXML
 	public void btnCalculate(ActionEvent event) {
 		
-		//	TODO: Call AmountToSave and TotalAmountSaved and populate 
-		
+		Retirement Retirement = new Retirement(Integer.parseInt((txtYearsToWork.getText())),
+				Double.parseDouble(txtSaveEachMonth.getText()), Integer.parseInt((txtAnnualReturn.getText())),
+				Double.parseDouble(txtYearsRetired.getText()),
+				Double.parseDouble(txtRequiredIncome.getText()), Double.parseDouble(txtMonthlySSI.getText()));	
 	}
 	
 }
