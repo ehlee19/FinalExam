@@ -12,7 +12,6 @@ import pkgCore.Retirement;
 
 public class RetirementController implements Initializable {
 
-		
 	private RetirementApp mainApp = null;
 	
 	@FXML
@@ -27,9 +26,6 @@ public class RetirementController implements Initializable {
 	private TextField txtRequiredIncome;
 	@FXML
 	private TextField txtMonthlySSI;
-	
-	
-
 	public RetirementApp getMainApp() {
 		return mainApp;
 	}
@@ -52,8 +48,6 @@ public class RetirementController implements Initializable {
 		txtYearsRetired.clear();
 		txtRequiredIncome.clear();
 		txtMonthlySSI.clear();
-		
-		
 	}
 	
 	@FXML
@@ -64,5 +58,4 @@ public class RetirementController implements Initializable {
 				Double.parseDouble(txtYearsRetired.getText()),
 				Double.parseDouble(txtRequiredIncome.getText()), Double.parseDouble(txtMonthlySSI.getText()));	
 	}
-	
 }

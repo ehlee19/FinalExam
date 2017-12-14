@@ -12,17 +12,14 @@ import javafx.scene.layout.BorderPane;
 public class RetirementApp extends Application {
 
 	private RetirementController controller;
-	
 	public static void main(String[] args) {
 		launch(args);
-
 	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
 		try {
-			// Load person overview.
 			FXMLLoader loader = new FXMLLoader();
 			
 			loader =  new FXMLLoader(getClass().getResource("/app/view/Retirement.fxml"));
@@ -33,7 +30,6 @@ public class RetirementApp extends Application {
 
 			primaryStage.setScene(scene);
 
-			// Give the controller access to the main app.
 			RetirementController controller = loader.getController();
 			controller.setMainApp(this);
 			
@@ -41,8 +37,6 @@ public class RetirementApp extends Application {
 
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		
+		}	
 	}
-
 }

@@ -10,9 +10,6 @@ public class Retirement {
 	private double dAnnualReturnRetired;
 	private double dRequiredIncome;
 	private double dMonthlySSI;
-	
-	
-	
 	public double AmountToSave()
 	{
 		double pv = (FinanceLib.pv(dAnnualReturnRetired, (iYearsRetired * 12), dRequiredIncome - dMonthlySSI, 0, false));
